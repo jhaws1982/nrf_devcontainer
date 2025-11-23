@@ -1,0 +1,33 @@
+{
+  "name": "NRF",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "ubuntu24.04"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "nordic-semiconductor.nrf-connect-extension-pack",
+        "marus25.cortex-debug",
+        "mcu-debug.debug-tracker-vscode",
+        "mcu-debug.memory-view",
+        "mcu-debug.peripheral-viewer",
+        "mcu-debug.rtos-views",
+        "eclipse-cdt.memory-inspector",
+        "eclipse-cdt.serial-monitor"
+      ]
+    }
+  },
+  "runArgs": [
+    "--privileged",
+    "--cap-add=SYS_ADMIN",
+    "--volume=/dev/bus/usb:/dev/bus/usb",
+    "--security-opt",
+    "seccomp=unconfined" // sometimes needed for libusb
+  ],
+  "remoteUser": "vscode"
+}

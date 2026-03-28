@@ -6,9 +6,13 @@
       "VARIANT": "ubuntu24.04"
     }
   },
+  "containerEnv": {
+    "DISPLAY": ""
+  },
   "customizations": {
     "vscode": {
       "extensions": [
+        "ms-vscode.cmake-tools",
         "ms-vscode.cpptools",
         "ms-vscode.cpptools-extension-pack",
         "nordic-semiconductor.nrf-connect-extension-pack",
@@ -18,7 +22,8 @@
         "mcu-debug.peripheral-viewer",
         "mcu-debug.rtos-views",
         "eclipse-cdt.memory-inspector",
-        "eclipse-cdt.serial-monitor"
+        "eclipse-cdt.serial-monitor",
+        "xaver.clang-format"
       ]
     }
   },
